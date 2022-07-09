@@ -2,11 +2,17 @@ const path = require('path');
 
 const express = require('express');
 const router = express.Router();
-const productController = require('../controllers/product');
+const adminController = require('../controllers/admin');
 // const rootdir = require('../util/path');
-// /admin/add-product => GET
-router.get('/Contactus', productController.getContact);
+const adminData = require('./admin');
+router.get('/Contactus', adminController.getContact);
 
-router.post('/Contactus', productController.postContact);
+
+
+// router.get('/Contactus', (req, res, next) => {
+//   res.sendFile(path.join(rootdir, 'views', 'Contactus.html'));
+// });
+
+router.post('/Contactus', adminController.postcontact);
 
 module.exports = router;
